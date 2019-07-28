@@ -1,0 +1,328 @@
+export { swiss as theme } from '@mdx-deck/themes'
+
+
+# (Beveik) vieni metai su React
+
+Dalius Dobravolskas
+
+---
+
+## Apie mane
+
+Daugiausiai dirbau prie "desktop" ir "back-end".
+
+Šiuo metu dirbu lietuviškoje kompanijoje prie [zoombook.lt](https://www.zoombook.lt).
+
+---
+
+## Card-a-mon
+
+Programa skirta kurti kortų žaidimus
+
+Nuoroda: [cardamon.ffff.lt](https://cardamon.ffff.lt/)
+
+---
+
+## Create React App
+
+```sh
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+---
+
+## Darbas su back-end
+
+```diff
+   },
++  "proxy": "http://localhost:5000",
+   "eslintConfig": {
+```
+
+Firefox: [Issue 6720](https://github.com/facebook/create-react-app/issues/6720)
+
+---
+
+## Prettier
+
+Automatinis kodo formatavimas.
+
+[prettier.io](https://prettier.io/)
+
+---
+
+## ESLint
+
+.eslinrc.js
+
+```js
+module.exports = {
+    extends: ['react-app'],
+}
+```
+
+eslint-plugin-import
+
+---
+
+## Husky
+
+```js
+  "husky": {
+    "hooks": {
+      "pre-commit":
+        "eslint 'src/**/*.js' --fix --max-warnings=0"
+    }
+  }
+```
+
+---
+
+## Lint staged
+
+```js
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --max-warnings 0 'src/**/*.js'"
+    ]
+  },
+```
+
+---
+
+## Flow
+
+[Open issue 70: High memory usage](https://github.com/flowtype/flow-bin/issues/70)
+
+[Open issue 2221: ... Object.values treats values as mixed](https://github.com/flowtype/flow-bin/issues/2221)
+
+Ne itin greitai veikia (priešingai negu jie deklaruoja)
+
+flow-types nematomas, jei apie jį nežinai
+
+---
+
+## Typescript
+
+Veikia ganėtinai greitai
+
+Create React App padaryta gerai
+
+DefinitelyTyped privalomas
+
+---
+
+## TypeScript: Migracija
+
+Migracija iš flow: labai paprasta
+
+Naudojimas "sename" projekte:
+
+* Užtruko
+
+* Pridariau bug'ų
+
+---
+
+## TypeScript: Ko trūksta
+
+Generatorių palaikymas
+
+Kai kurios bibliotekos turi blogus tipų aprašymus
+
+---
+
+## Typescript: Kita
+
+Airbnb:
+
+38% of bugs ... could have been prevented by TypeScript ...
+
+[Typescript Tax](https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b)
+
+---
+
+## Typescript ir ESLint
+
+@typescript-eslint
+
+[Using ESLint and Prettier in a TypeScript Project](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
+
+---
+
+## Redux
+
+Labai gera biblioteka, kol nesusiduri su side effects
+
+Paprastam projektui MobX tiktų labiau
+
+---
+
+## Redux-Saga
+
+Įrankis skirtas valdyti side effects
+
+Ankščiau ar vėliau tenka vistiek naudoti
+
+Patiko testavimas, nors testus rašyti sudėtinga
+
+---
+
+## CSS
+
+CSS Modules
+
+Sass/Scss - node-sass
+
+Styled-components, Emotion ir kiti
+
+---
+
+## Testavimas
+
+Jest
+
+Enzyme
+
+```js
+"coverage": "npm test -- --coverage --watch",
+```
+
+---
+
+## UI Bibliotekos
+
+react-modal, react-select, react-color, react-reveal
+
+---
+
+## Kitos bibliotekos
+
+redux-undo, react-device-detect, react-router, react-dnd
+
+---
+
+## Web workers
+
+[Open Issue 5886](https://github.com/facebook/create-react-app/pull/5886)
+
+---
+
+## I18n
+
+i18next
+
+i18next-scanner
+
+i18next-scanner-typescript
+
+react-i18next
+
+---
+
+## Klaidų valdymas
+
+ErrorBoundary
+
+[sentry.io](https://sentry.io)
+
+---
+
+## Klaidų valdymas: alternatyva
+
+stacktrace-js
+
+window.addEventListener:
+
+* error
+
+* unhandledrejection
+
+---
+
+## Didžiausios problemos ir iššūkiai
+
+Persilaužti ir mąstyti React'iškai
+
+Redux ir local state susipjovimas
+
+react-konva
+
+---
+
+## Ko nedariau, bet galbūt verta
+
+React hooks
+
+loglevel
+
+Storybook
+
+Next.js
+
+---
+
+## Įrankiai
+
+React Developer Tools
+
+Redux DevTools
+
+Integracija su Chrome Dev Tools
+
+---
+
+## Fun
+
+Gatsby
+
+mdx-deck
+
+---
+
+## Ateitis
+
+In 2019, the dominant costs of processing scripts are now download and CPU execution time.
+
+Šaltinis: https://v8.dev/blog/cost-of-javascript-2019
+
+---
+
+## RealWorld palyginimas
+
+Performance - +- visi vienodi
+
+Dydis - Svelte mažiausias (20 kartų < už React + Redux)
+
+Eilučių skaičius - Svelte prie mažesnių
+
+Šaltinis: [A RealWorld comparison of front-end frameworks...](https://www.freecodecamp.org/news/a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update-4be0d3c78075/)
+
+---
+
+## Svelte: Gerai
+
+Prettier, ESLint, CSS
+
+Sapper (Next.js alternatyva)
+
+---
+
+## Svelte: komplikuota
+
+TypeScript, Testavimas, i18n, Klaidų valdymas, Įrankiai
+
+Store: galima naudoti Redux, jei reikia
+
+UI ir kitos bibliotekos
+
+---
+
+# Pabaiga

@@ -1,0 +1,18 @@
+{
+  "name": "oneyearwithreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mdx-deck": "^2.5.0"
+  },
+  "dependencies": {
+    "@mdx-deck/export": "^2.5.0"
+  }
+}
